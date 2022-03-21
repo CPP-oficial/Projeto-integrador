@@ -1,0 +1,27 @@
+.correto{
+    font-size: 2em;
+    text-align: center;
+    margin: 0.5em auto 0em auto;
+    color: green;
+    width: 100%;
+    background-color: rgba(144, 238, 144, 0.479);
+    border: 1px solid limegreen;
+    transition: all ease-in-out 0.5s;
+}
+
+.errado{
+    font-size: 2em;
+    text-align: center;
+    margin: 0.5em auto 0em auto;
+    color: red;
+    width: 100%;
+    background-color: rgba(235, 31, 31, 0.479);
+    border: 1px solid rgb(221, 43, 43);
+    transition: all ease-in-out 0.5s;
+}
+
+.correto:hover, .errado:hover{
+    transform: scale(1.03);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.315);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.315);;
+}

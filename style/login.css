@@ -1,0 +1,117 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+
+:root{
+    --cor1: white;
+    --cor2: rgba(35, 209, 35, 0.8);
+    --cor3: rgba(216, 214, 214);
+    --cor4: rgba(0, 0, 0, 0.8);
+    --cor5: rgba(219, 219, 219, 0.425);
+    --cor6: rgba(138, 16, 122, 0.877);
+
+    --cor-sombra: rgba(0, 0, 0, 0.15);
+    --cor-fundo: rgba(0, 0, 0, 0.05);
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+body{
+    background-color: var(--cor5);
+}
+
+.caixa-pai{
+    display: block;
+    position: relative;
+    height: 60em;
+}
+
+.caixa{
+    width: 40em; 
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    background-color: var(--cor1);
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px var(--cor-sombra);
+}
+
+.conteudo .login{
+    font-size: 2em;
+    padding-top: 10px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.conteudo .login::after{
+    content: '';
+    position: absolute;
+    height: 5px;
+    width: 12em;
+    left: 0;
+    right: 0;
+    background-color: var(--cor2);
+    border-radius: 5px;
+    margin: auto;
+}
+
+.parametros input{
+    margin: 10px auto;
+    border: 1px solid transparent;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 5px var(--cor-sombra);
+}
+
+input[type="email"], input[type="password"], input[type="text"]{
+    display: block;
+    border-radius: 5px;
+    width: 20em;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="email"]:hover, input[type="password"]:hover, input[type="text"]:hover{
+    border: 1px solid var(--cor2);
+}
+
+input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focus{
+    border: 1px solid var(--cor2);
+    width: 22em;
+}
+
+.check{
+    width: 75%;
+    margin: 10px auto;
+}
+
+.check label{
+    font-size: 1.2em;
+}
+
+input[type="submit"]{
+    display: block;
+    cursor: pointer;
+    width: 100px;
+    border: 1px solid var(--cor2);
+    border-radius: 50px;
+    color: var(--cor1);
+    background-color: var(--cor2);
+    font-weight: bold;
+}
+
+input[type="submit"]:hover{
+    color: var(--cor2);
+    background-color: var(--cor1);
+    transition: all 0.3s ease-in-out;
+}

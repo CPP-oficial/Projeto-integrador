@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPP</title>
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../../style/cpp.css">
+    <link rel="stylesheet" href="../../style/formularioTCC.css">
+</head>
+<body>
+    <div class="barra_lateral">
+
+        <!-- Logo -->
+
+        <div class="conteudo_logo">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <div class="nome_logo">
+                    <abbr title="Centro de Projetos de Pesquisas">CPP</abbr>
+                </div>
+            </div>
+            <div id="botao" class="botao">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+
+        <!-- Opções da navegação-->
+
+        <nav>
+            <ul class="lista_navegacao">
+                <li>
+                    <input type="search" id="pesquisa" onkeyup="filtrar()" placeholder="Pesquise...">
+                    <span class="fas fa-search"></span>
+                    <span class="indicador">Pesquise</span>
+                </li>
+            </ul>
+            <div id="menu">
+                <ul class="lista_navegacao">
+                    <li>
+                        <a href="#">
+                            <span class="fas fa-home"></span>
+                            <span class="opcao">Início</span>
+                        </a>
+                        <span class="indicador">Início</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="fas fa-file"></span>
+                            <span class="opcao">Pesquisas</span>
+                        </a>
+                        <span class="indicador">Pesquisas</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="fas fa-medal"></span>
+                            <span class="opcao">Medalhistas</span>
+                        </a>
+                        <span class="indicador">Madalhistas</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="fas fa-comment"></span>
+                            <span class="opcao">Fórum</span>
+                        </a>
+                        <span class="indicador">Fórum</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="fas fa-folder"></span>
+                            <span class="opcao">ABNT</span>
+                        </a>
+                        <span class="indicador">ABNT</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="fas fa-cog"></span>
+                            <span class="opcao">Configurações</span>
+                        </a>
+                        <span class="indicador">Configurações</span>
+                    </li>
+                    
+                    <li>
+                        <a href="#">
+                            <span class="fas fa-sign-out-alt" style="transform:rotate(180deg)"></span>
+                            <span class="opcao">Sair</span>
+                        </a>
+                        <span class="indicador">Sair</span>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Área de conteúdo -->
+
+    <div class="conteudo">
+
+        <?php
+        if(isset($mensagem)){
+            foreach($mensagem as $mensagem){
+                echo '<span class="mensagem">'.$mensagem.'</span>';
+            }
+        }
+        ?>
+
+        <div class="conteudo-formulario-admin">
+            <form action="<?php $_SERVER['PHP_SELF']?>" method="POST" enctype="multipart/form-data">
+                <h3>Adicione o TCC</h3>
+                <input type="text" placeholder="Digite o título do TCC" name="titulo_nome" class="input_caixa">
+                <input type="text" placeholder="Digite o nome do Orientador" name="orientador_nome" class="input_caixa">
+                <input type="file" accept="application/pdf" name="pdf_anexo" class="input_caixa">
+                <input type="submit" class="botao_forms" name="adicione" value="Adicione o TCC">
+            </form>
+        </div>
+
+        <?php
+            $select = mysqli_query($conexao, "SELECT * FROM tcc");
+        ?>
+
+        <div class="caixa_tcc">
+            <table class="caixa_tcc_tabela">
+                <thead>
+                    <tr>
+                        <th>arquivo</th>
+                        <th>nome</th>
+                        <th>orientador</th>
+                        <th colspan="2">opções</th>
+                    </tr>
+                </thead>
+
+                <?php
+                    while($linha = mysqli_fetch_assoc($select)){ 
+                ?>
+
+                <tr>
+                    <td><img src="../../image/pdf.svg" height="100px" alt=""></td>
+                    <td><a href="" style="font-size: 2em;">oi</a></td>
+                    <td style="font-size: 2em;">ola</td>
+                    <td>
+                        <a href="admin_atualizacao.php?edit=<?php echo $linha['id'];?>" class="botao_forms"><i class="fas fa-edit"></i>editar</a>
+                        <a href="admin_pagina.php?delete=<?php echo $linha['id'];?>" class="botao_forms"><i class="fas fa-trash"></i>deletar</a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><img src="../../arquivos/<?php $linha['arquivo'];?>" height="100px" alt=""></td>
+                    <td><?php $linha['nome'];?></td>
+                    <td><?php $linha['orientadoh'];?></td>
+                    <td>
+                        <a href="admin_atualizacao.php?edit=<?php echo $linha['id'];?>" class="botao_forms"><i class="fas fa-edit"></i>editar</a>
+                        <a href="admin_pagina.php?delete=<?php echo $linha['id'];?>" class="botao_forms"><i class="fas fa-trash"></i>deletar</a>
+                    </td>
+                </tr>
+
+                <?php
+                    };
+                ?>
+
+            </table>
+        </div>
+
+    </div>
+
+    <!--Link de font awesome-->
+    <script src="https://kit.fontawesome.com/b9bdcd005c.js" crossorigin="anonymous"></script>
+
+    <!--Scripts próprios-->
+    <script src="../../js/barraLateral.js"></script>
+    <script src="../../js/pesquisa.js"></script>
+</body>
+</html>

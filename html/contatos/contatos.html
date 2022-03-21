@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de contato</title>
+    <link rel="stylesheet" href="../../style/header.css">
+    <link rel="stylesheet" href="../../style/contatos.css">
+    <link rel="stylesheet" href="../../style/footer.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+</head>
+<body class="fundo">
+    <header class="cabecalho">
+        <a href="../homepage/index.html" class="logo"><i class="fas fa-search"></i>&nbsp;CPP</a>
+        <div id="menu-botao" class="fas fa-bars"></div>
+        <nav class="barranav">
+            <ul class="bloco-nav">
+                <li class="opcao">
+                    <a href="#">Sobre</a>
+                </li>
+                <li class="opcao">
+                    <a class="desativado">Contatos</a>
+                </li>
+                <li class="opcao">
+                    <a href="#">Benefícios</a>
+                </li>
+                <li class="opcao">
+                    <a href="#">Login</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="conteiner">
+            <!-- Informações geográficas -->
+            <section>
+                <!-- Mapa feito com o leaflet.js -->
+                <div class="caixa">
+                    <div id="map"></div>
+        
+                    <!-- Informações de contato -->
+                    <div class="info">
+                        <h3>
+                            Informações de contato
+                        </h3>
+                        <div class="icone">
+                            <i class="fas fa-phone"></i>
+                            <span>(XX) XXXXXXXXX</span>
+                        </div>
+                        <div class="icone">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Sítio Lagoa do Clementino, S/N. Zona Rural - Apodi/RN - CEP 59.700.00</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Contato via formulário de e-mail -->
+            <section>
+                <div class="caixa">
+                    <header class="cabeca">
+                        <h3>
+                            Formulário de contato
+                        </h3>
+                        <p>
+                            Preencha todos os parâmetros abaixo para nos contatar. Dê preferência ao formulário no momento de relatar erros, problemas, feedbacks, etc. Jamais utilize para fazer brincadeiras, caso o use para tal fim, ignoraremos seu e-mail.
+                        </p>
+                    </header>
+                    <!-- Área dedicada ao formulário -->
+                    <main class="formulario">
+                        <form action="../../php/email.php" method="POST">
+        
+                            <!-- Parametros do formulário -->
+                            <label for="nome">Nome:</label>
+                            <input type="text" id="nome" class="parametro" name="nome" required>
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" class="parametro" name="email" required>
+                            <label for="assunto">Assunto:</label>
+                            <input type="text" id="assunto" class="parametro" name="assunto" required>
+                            <label for="mensagem">Mensagem:</label>
+                            <textarea id="mensagem" cols="30" rows="10" class="parametro" name="mensagem" required></textarea>
+                            <input type="submit" value="Enviar" class="botao">
+                        </form>
+                    </main>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!--footer-->
+
+    <footer class="rodape">
+        <div class="rodape-grid">
+            
+            <section class="caixa-footer">
+                <h3>Visite</h3>
+                <a href="#"><i class="fas fa-angle-right"></i>&nbsp;Benefícios</a>
+                <a href="#"><i class="fas fa-angle-right"></i>&nbsp;Contatos</a>
+                <a href="#"><i class="fas fa-angle-right"></i>&nbsp;Login</a>
+                <a href="#"><i class="fas fa-angle-right"></i>&nbsp;Sobre</a>
+            </section>
+
+            <section class="caixa-footer">
+                <h3>Desenvolvedores</h3>
+                <a href="https://github.com/Azafii" target="_blank" rel="external"><i class="fas fa-angle-right"></i>&nbsp;Azaf</a>
+
+                <a href="https://github.com/Herison15" target="_blank" rel="external"><i class="fas fa-angle-right"></i>&nbsp;Herison</a>
+                
+                <a href="https://github.com/Rick222555000" target="_blank" rel="external"><i class="fas fa-angle-right"></i>&nbsp;Rikelmy</a>
+            </section>
+
+            <section class="caixa-footer">
+                <h3>Acompanhe-nos</h3>
+                <a href="#"><i class="fab fa-facebook"></i>&nbsp;Facebook</a>
+                <a href="#"><i class="fab fa-github"></i>&nbsp;Github</a>
+                <a href="#"><i class="fab fa-instagram-square"></i>&nbsp;Instagram</a>
+                <a href="#"><i class="fab fa-tiktok"></i>&nbsp;Tiktok</a>
+                <a href="#"><i class="fab fa-twitter"></i>&nbsp;Twitter</a>
+            </section>
+
+        </div>
+
+    </footer>
+
+    <!-- Scripts -->
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+    <script src="../../js/mapa.js"></script>
+    <script src="../../js/menu.js"></script>
+    <script src="https://kit.fontawesome.com/b9bdcd005c.js" crossorigin="anonymous"></script>
+</body>
+</html>

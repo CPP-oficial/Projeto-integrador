@@ -1,0 +1,163 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+
+:root{
+    --cor1: rgb(255, 255, 255);
+    --cor2: rgba(35, 209, 35, 0.8);
+    --cor3: rgba(216, 214, 214);
+    --cor4: rgba(0, 0, 0, 0.8);
+    --cor5: rgba(219, 219, 219, 0.425);
+    --cor6: rgba(138, 16, 122, 0.878);
+
+    --cor-sombra: rgba(0, 0, 0, 0.15);
+    --cor-fundo: rgba(138, 132, 132, 0.05);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+.conteudo{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    width: 100%;
+    margin: auto;
+}
+
+.conteudo-formulario-admin form{
+    max-width: 50em;
+    margin: auto;
+    padding: 2em;
+    border-radius: 0.5em;
+    background-color: var(--cor5);
+}
+
+.conteudo-formulario-admin.centro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    
+}
+
+.conteudo-formulario-admin form h3{
+    text-transform: uppercase;
+    color: var(--cor4);
+    margin-bottom: 1em;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.conteudo-formulario-admin form .input_caixa{
+    width: 100%;
+    border-radius: 0.5em;
+    padding: 1.2em 1.5em;
+    font-size: 1.7em;
+    margin: 1em 0;
+    background-color: var(--cor1);
+}
+
+.botao_forms{
+    display: block;
+    width: 100%;
+    margin-top: 1em;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 0.5em;
+    font-size: 1.7em;
+    padding: 1em 3em;
+    background-color: var(--cor6);
+    color: var(--cor1);
+}
+
+.botao_forms:hover{
+    background-color: var(--cor1);
+    color: var(--cor6);
+    box-shadow: 1px 1px 3px var(--cor-sombra);
+}
+
+.mensagem{
+    display: block;
+    background-color: var(--cor-fundo);
+    padding: 1.5em 1em;
+    font-size: 2em;
+    color: var(--cor4);
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+/* Tabela */
+
+.caixa_tcc{
+    margin: 2em 0em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.caixa_tcc .caixa_tcc_tabela{
+    width: 90%;
+    text-align: center;
+}
+
+.caixa_tcc .caixa_tcc_tabela thead{
+    font-size: 2em;
+    background-color: var(--cor5);
+}
+
+.caixa_tcc .caixa_tcc_tabela th{
+    padding: 2.5em;
+    font-size: 1em;
+}
+
+.caixa_tcc .caixa_tcc_tabela td{
+    padding: 2.5em;
+    font-size: 1em;
+    border-bottom: 1px solid black;
+}
+
+.caixa_tcc .caixa_tcc_tabela .botao_forms:first-child{
+    margin-top: 0;
+}
+
+.caixa_tcc .caixa_tcc_tabela .botao_forms:last-child{
+    background: crimson;
+}
+
+.caixa_tcc .caixa_tcc_tabela .botao_forms:last-child:hover, .caixa_tcc .caixa_tcc_tabela .botao_forms:first-child:hover{
+    background: var(--cor4);
+    box-shadow: 1px 1px 3px var(--cor-sombra);
+}
+
+/* Responsividade */
+
+@media (max-width: 991px){
+    .conteudo{
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 768px){
+    .caixa_tcc{
+        overflow-y: scroll;
+    }
+
+    .caixa_tcc .caixa_tcc_tabela{
+        width: 80em;
+    }
+}
+
+@media (max-width: 450px){
+    .conteudo{
+        font-size: 50%;
+    }
+}

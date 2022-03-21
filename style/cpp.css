@@ -1,0 +1,243 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+
+:root{
+    --cor1: white;
+    --cor2: rgba(35, 209, 35, 0.8);
+    --cor3: rgba(216, 214, 214);
+    --cor4: rgba(0, 0, 0, 0.8);
+    --cor5: rgba(219, 219, 219, 0.425);
+    --cor6: rgba(138, 16, 122, 0.877);
+
+    --cor-sombra: rgba(0, 0, 0, 0.15);
+    --cor-fundo: rgba(0, 0, 0, 0.05);
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Barra lateral */
+
+.barra_lateral{
+    height: 100%;
+    width: 78px;
+    background-color: var(--cor2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 6px 14px;
+    transition: all 0.5s ease;
+}
+
+.logo{
+    color: var(--cor1);
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.logo i{
+    margin-right: 0.2em;
+    font-size: 2.5em;
+}
+
+.nome_logo{
+    font-size: 1.5em;
+    font-weight: 400px;
+}
+
+.botao{
+    color: var(--cor1);
+    font-size: 20px;
+    position: absolute;
+    left: 50%;
+    top: 6px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translate(-50%, 0%);
+}
+
+.lista_navegacao{
+    margin-top: 20px;
+}
+
+.lista_navegacao li{
+    position: relative;
+    list-style: none;
+    height: 50px;
+    width: 100%;
+    margin: 0px 5px;
+    line-height: 50px;
+}
+
+.lista_navegacao li .fa-search{
+    color: var(--cor1);
+    position: absolute;
+    z-index: 99;
+    font-size: 22px;
+    top: 50%;
+    transform: translate(50%, -50%);
+}
+
+.lista_navegacao .fa-search{
+    position: absolute;
+    z-index: 99;
+    color: var(--cor1);
+    font-size: 22px;
+    transition: all 0.5s ease;
+}
+
+.lista_navegacao input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 12px;
+    background-color: var(--cor5);
+    padding-left: 50px;
+    font-size: 18px;
+    color: var(--cor1);
+}
+
+.lista_navegacao input::placeholder{
+    color: rgba(255, 255, 255, 0.452);
+}
+
+.lista_navegacao input::-webkit-search-cancel-button{
+    position: relative;
+    right: 20px;
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    background: var(--cor-fundo);
+}
+
+/*Hover se não houver active*/
+
+.barra_lateral:not(.active) .lista_navegacao input:hover{
+    background-color: var(--cor1);
+    color: var(--cor2);
+}
+
+.barra_lateral:not(.active) .lista_navegacao input:hover ~ i{
+    color: var(--cor2);
+}
+
+.lista_navegacao li a{
+    color: var(--cor1);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    transition: all 0.4s ease-in-out;
+    padding: 0px 10px;
+    white-space: nowrap;
+}
+
+.lista_navegacao li a:hover{
+    background-color: var(--cor1);
+    color: var(--cor2);
+}
+
+.lista_navegacao li a i{
+    margin-right: 10px;
+    border-radius: 12px;
+    height: 50px;
+    min-width: 1.5em;
+    line-height: 50px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.lista_navegacao .opcao{
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Área do CPP */
+
+.conteudo{
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 78px);
+    left: 78px;
+    right: 78px;
+    transition: all 0.5s ease;
+}
+
+.barra_lateral.active ~ .conteudo{
+    width: calc(100% - 240px);
+    left: 240px;
+    right: 240px;
+}
+
+/*Indicadores*/
+
+.barra_lateral .lista_navegacao li .indicador{
+    position: absolute;
+    left: 122px;
+    top: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 6px;
+    height: 35px;
+    width: 122px;
+    line-height: 35px;
+    text-align: center;
+    background-color: var(--cor1);
+    box-shadow: 0px 5px 10px var(--cor-sombra);
+    transition: 0s;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.barra_lateral .lista_navegacao li:hover .indicador{
+    transition: all 0.5s ease;
+    opacity: 1;
+    top: 50%;
+}
+
+/*Responseividade*/
+
+.barra_lateral.active{
+    width: 240px;
+}
+
+.barra_lateral.active .logo{
+    opacity: 1;
+    pointer-events: none;
+}
+
+.barra_lateral.active .botao{
+    left: 90%;
+}
+
+.barra_lateral.active .indicador{
+    display: none;
+}
+
+.barra_lateral.active .lista_navegacao .opcao{
+    opacity: 1;
+    pointer-events: auto;
+}

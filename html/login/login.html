@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesse o CPP</title>
+    <link rel="stylesheet" href="../../style/header.css">
+    <link rel="stylesheet" href="../../style/footer.css">
+    <link rel="stylesheet" href="../../style/login.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <a href="../homepage/index.html" class="logo"><i class="fas fa-search"></i>&nbsp;CPP</a>
+        <div id="menu-botao" class="fas fa-bars"></div>
+        <nav class="barranav">
+            <ul class="bloco-nav">
+                <li class="opcao">
+                    <a href="#">Sobre</a>
+                </li>
+                <li class="opcao">
+                    <a href="../contatos/contatos.html">Contatos</a>
+                </li>
+                <li class="opcao">
+                    <a href="#">Benefícios</a>
+                </li>
+                <li class="opcao">
+                    <a class="desativado">Login</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="caixa-pai">
+        <div class="caixa">
+            <section class="conteudo">
+                <header class="login">
+                    <h1>
+                        Login
+                    </h1>
+                </header>
+                <main class="parametros">
+                   <form method="POST">
+                        <input type="email" placeholder="E-mail" name="email" required>
+                        <input type="password" placeholder="Senha" name="password" id="password" required>
+                        <div class="check">
+                            <input type="checkbox" id="mostrar-senha" onclick="mostrar_senha()">
+                            <label for="mostrar-senha">Mostrar/Esconder senha</label>
+                        </div>
+                        <input type="submit" value="Login">
+                    </form>
+                </main>
+            </section>
+        </div>
+    </main>
+    <footer class="rodape">
+        <div class="rodape-grid">
+            
+            <section class="caixa-footer">
+                <h3>Visite</h3>
+                <a href="#"><i class="fas fa-angle-right"></i>&nbsp;Benefícios</a>
+                <a href="#"><i class="fas fa-angle-right"></i>&nbsp;Contatos</a>
+                <a href="#"><i class="fas fa-angle-right"></i>&nbsp;Login</a>
+                <a href="#"><i class="fas fa-angle-right"></i>&nbsp;Sobre</a>
+            </section>
+
+            <section class="caixa-footer">
+                <h3>Desenvolvedores</h3>
+                <a href="https://github.com/Azafii" target="_blank" rel="external"><i class="fas fa-angle-right"></i>&nbsp;Azaf</a>
+
+                <a href="https://github.com/Herison15" target="_blank" rel="external"><i class="fas fa-angle-right"></i>&nbsp;Herison</a>
+                
+                <a href="https://github.com/Rick222555000" target="_blank" rel="external"><i class="fas fa-angle-right"></i>&nbsp;Rikelmy</a>
+            </section>
+
+            <section class="caixa-footer">
+                <h3>Acompanhe-nos</h3>
+                <a href="#"><i class="fab fa-facebook"></i>&nbsp;Facebook</a>
+                <a href="#"><i class="fab fa-github"></i>&nbsp;Github</a>
+                <a href="#"><i class="fab fa-instagram-square"></i>&nbsp;Instagram</a>
+                <a href="#"><i class="fab fa-tiktok"></i>&nbsp;Tiktok</a>
+                <a href="#"><i class="fab fa-twitter"></i>&nbsp;Twitter</a>
+            </section>
+
+        </div>
+
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../../js/menu.js"></script>
+    <script src="../../js/mostrarSenha.js"></script>
+    <script src="https://kit.fontawesome.com/b9bdcd005c.js" crossorigin="anonymous"></script>
+</body>
+</html>
